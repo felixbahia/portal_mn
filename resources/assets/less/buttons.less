@@ -1,0 +1,458 @@
+@import "fontawesome/less/fontawesome";
+@import "fontawesome/less/solid";
+
+
+@url-assets-img: "/images";
+
+.bt-view{
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    &::after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        float: left;
+        background-image: url("@{url-assets-img}/icons/busca-icon.png");
+        background-size: 18px 17px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        margin-left: 2px;
+    }
+}
+
+.bt-delete{
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    &::after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        float: left;
+        background-image: url("@{url-assets-img}/icons/delete-icon.svg");
+        background-size: 18px 17px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        margin-left: 2px;
+    }
+}
+
+.bt-selected{
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin: 0 auto;
+    &::after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        float: left;
+        background-image: url("@{url-assets-img}/icons/selected-icon.png");
+        background-size: 18px 17px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        margin-left: 2px;
+    }
+}
+
+.bt-edit-money{
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+    width: 15px;
+    padding: 0;
+    color: #000;
+    .fa-icon;
+    .fas;
+    font-size: 16px;
+    text-align: center;
+    line-height: 16px;
+    &:before {
+        content: @fa-var-dollar-sign;
+    }
+}
+
+.bt-copy{
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+    width: 15px;
+    padding: 0;
+    color: #000;
+    .fa-icon;
+    .fas;
+    font-size: 16px;
+    text-align: center;
+    line-height: 16px;
+    &:before {
+        content: @fa-var-copy;
+    }
+}
+
+.bt-invoice-dollar{
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+    width: 15px;
+    padding: 0;
+    color: #000;
+    .fa-icon;
+    .fas;
+    font-size: 16px;
+    text-align: center;
+    line-height: 16px;
+    &:before {
+        content: @fa-var-file-invoice-dollar;
+    }
+}
+
+.bt-aprove{
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+    width: 15px;
+    padding: 0;
+    color: #005c8d;
+    .fa-icon;
+    .fas;
+    font-size: 18px;
+    text-align: center;
+    line-height: 16px;
+    &:before {
+        content: @fa-var-thumbs-up;
+    }
+}
+.bt-reprove{
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+    width: 15px;
+    padding: 0;
+    color: #770000;
+    .fa-icon;
+    .fas;
+    font-size: 18px;
+    text-align: center;
+    line-height: 16px;
+    &:before {
+        content: @fa-var-thumbs-down;
+    }
+}
+
+.bt-retaguarda{
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+    width: 15px;
+    padding: 0;
+    color: #003554;
+    .fa-icon;
+    .fa;
+    font-size: 18px;
+    text-align: center;
+    line-height: 16px;
+    left: 50%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-80%);
+    &:before {
+        content: @fa-var-people-arrows;
+    }
+}
+
+.bt-financeiro{
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+    width: 15px;
+    padding: 0;
+    color: #005c8d;
+    .fa-icon;
+    .fas;
+    font-size: 18px;
+    text-align: center;
+    line-height: 16px;
+    &:before {
+        content: @fa-var-file-invoice-dollar;
+    }
+}
+.btn-line-add {
+    width: 35px;
+    height: 36px;
+    display: block;
+    margin: 0 auto;
+    float: left;
+    background: #218838;
+    text-align: center;
+    padding: 0;
+    cursor: pointer;
+    &::after {
+        content: "+";
+        font-size: 25px;
+        font-weight: 700;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        color: #FFF;
+        line-height: 35px;
+    }
+}
+.btn-line-remove{
+    width: 35px;
+    height: 36px;
+    display: block;
+    margin: 0 auto;
+    float: left;
+    background: #218838;
+    text-align: center;
+    padding: 0;
+    cursor: pointer;
+    .fa-icon;
+    .fas;
+    &::after {
+        content: @fa-var-trash-alt;
+        font-size: 18px;
+        font-weight: 700;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        color: #FFF;
+        line-height: 35px;
+    }
+}
+.btn-excel{
+    display: block;
+    margin: 0 auto;
+    float: left;
+    text-align: center;
+    padding: 0;
+    cursor: pointer;
+    .fa-icon;
+    .fas;
+    &::after {
+        content: @fa-var-file-excel;
+    }
+}
+
+.btn-foto{
+    display: block;
+    color: black;
+    text-align: center;
+    margin: 3px 5px !important;
+    float: left;
+    cursor: pointer;
+    .fa-icon;
+    .fas;
+    &::after {
+        content: @fa-var-camera;
+    }
+}
+
+.btn-foto-estoque{
+    display: block;
+    color: black;
+    text-align: center;
+    margin: 3px 5px 0px 0px !important;
+    float: left;
+    cursor: pointer;
+    .fa-icon;
+    .fas;
+    &::after {
+        content: @fa-var-camera;
+    }
+}
+
+.btn-book{
+    display: block;
+    color: black;
+    text-align: center;
+    margin: 3px 5px !important;
+    cursor: pointer;
+    .fa-icon;
+    .fas;
+    &::after {
+        content: @fa-var-book-open;
+    }
+}
+
+.btn-nota-pdf{
+    display: block;
+    color: black;
+    text-align: center;
+    margin: 3px 5px !important;
+    cursor: pointer;
+    .fa-icon;
+    .fas;
+    &::after {
+        content: @fa-var-file-pdf;
+    }
+}
+.btn-laudo{
+    color: black;
+    text-align: center;
+    margin: -14px 0px 0px 0px !important;
+    cursor: pointer;
+    .fa-icon;
+    .fas;
+    &::after {
+        content: @fa-var-file;
+    }
+}
+.btn-download{
+    display: block;
+    color: black;
+    text-align: center;
+    margin: 3px 5px !important;
+    cursor: pointer;
+    .fa-icon;
+    .fas;
+    &::after {
+        content: @fa-var-cloud-download-alt;
+    }
+}
+.btn-lista{
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    font-size: initial;
+    .fa-icon;
+    .fas;
+    &::after {
+        content: @fa-var-list;
+    }
+}
+.btn-imagem{
+    display: block;
+    color: black;
+    text-align: center;
+    margin: 3px 5px !important;
+    cursor: pointer;
+    .fa-icon;
+    .fas;
+    &::after {
+        content: @fa-var-file-image;
+    }
+}
+
+
+.btn-icon-xml{
+    display: inline-block;
+    color: black;
+    width: 17px;
+    height: 17px;
+    margin: -3px 5px;
+    &::after{
+        content: '';
+        background: url("@{url-assets-img}/icons/xml-icon.svg") no-repeat center center;
+        background-size: 17px 17px;
+        width: 17px;
+        height: 17px;
+        display: block;
+        color: black;
+        text-align: center;
+        cursor: pointer;
+    }
+}
+
+.bt-cancelar{
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+    width: 15px;
+    padding: 0;
+    color: #770000;
+    .fa-icon;
+    .fas;
+    font-size: 18px;
+    text-align: center;
+    line-height: 16px;
+    &:before {
+        content: @fa-var-times;
+    }
+}
+
+.bt-frete{
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+    width: 15px;
+    padding: 0;
+    color: #770000;
+    .fa-icon;
+    .fas;
+    font-size: 18px;
+    text-align: center;
+    line-height: 16px;
+    &:before {
+        content: @fa-var-truck;
+    }
+}
+
+.bt-entrega{
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+    width: 15px;
+    padding: 0;
+    color: #005c8d;
+    .fa-icon;
+    .fas;
+    font-size: 18px;
+    text-align: center;
+    line-height: 16px;
+    &:before {
+        content: @fa-var-truck;
+    }
+}
+
+.bt-bloqueado{
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+    width: 15px;
+    padding: 0;
+    color: #770000;
+    .fa-icon;
+    .fas;
+    font-size: 18px;
+    line-height: 16px;
+    text-align: center;
+    &:before {
+        content: @fa-var-times;
+    }
+}
+
+.bt-estorno{
+    width: 28px;
+    height: 27px;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    &::after {
+        content: '';
+        width: 28px;
+        height: 27px;
+        float: left;
+        background-image: url("@{url-assets-img}/icons/estorno.svg");
+        background-size: 28px 27px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        margin-left: 2px;
+    }
+}

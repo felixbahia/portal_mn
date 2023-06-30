@@ -1,0 +1,87 @@
+
+@font-family: Arial, Helvetica, sans-serif;
+
+@url-assets-img: "/images";
+
+/************************************************************************/
+
+@color-header-font: #ffffff;
+@color-header-background: #003554;
+@color-header-background-active-module: #174763;
+
+@color-footer-font: #ffffff;
+
+@color-btn: #ffffff;
+
+/************************************************************************/
+
+.border-radius (@radius: 5px) {
+    border-radius: @radius;
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+}
+.box-shadow (@inset: '', @x: 0, @y: 0, @blur: 1px, @spread: 0, @color: #000) {
+    box-shadow: @arguments;
+    -moz-box-shadow: @arguments;
+    -webkit-box-shadow: @arguments;
+}
+.center_content(){
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.overfow_text(){
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/************************************************************************/
+
+.header_print {
+    height: 45px;
+    background-image: url("@{url-assets-img}/background_head_print.jpeg");
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    width: 100%;
+    clear: both;
+    color: @color-header-font;
+    float: left;
+    .content-logo {
+        height: 45px;
+        margin: 0 auto;
+        display: block;
+        a{
+            .center_content();
+            text-align: center;
+            display: block;
+            color: @color-header-font;
+            img {
+                height: 35px;
+            }
+        }
+    }
+}
+.footer_footer {
+    width: 100%;
+    float: left;
+    clear: both;
+    .content_blue_footer {
+        width: 100%;
+        height: 20px;
+        float: left;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 10px;
+        font-family: @font-family;
+        line-height: 20px;
+        vertical-align: middle;
+        color: @color-footer-font;
+        background-color: #015c91;
+    }
+}
+#app{
+    overflow-x: hidden;
+    padding-top: 50px;;
+    height: auto;
+}

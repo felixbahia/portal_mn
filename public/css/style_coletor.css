@@ -1,0 +1,220 @@
+/************************************************************************/
+/************************************************************************/
+/************************************************************************/
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+html,
+body {
+  float: left;
+  width: 227px;
+  height: 224px;
+  background: #fff;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+}
+.page-sem-header body {
+  background: #003554 !important;
+}
+:focus {
+  outline: 0;
+  box-shadow: none !important;
+}
+a:hover {
+  text-decoration: none;
+}
+input,
+textarea {
+  font-family: Arial, Helvetica, sans-serif;
+}
+b,
+strong {
+  font-weight: 700;
+}
+div.dataTables_wrapper div.dataTables_processing {
+  display: none !important;
+}
+label {
+  margin-bottom: 0;
+}
+.display_none {
+  display: none;
+}
+.login {
+  float: left;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.login .logo-login {
+  width: 227px;
+  text-align: center;
+  padding: 10px 0;
+}
+.login .logo-login img {
+  width: 70px;
+}
+.login .form-group {
+  width: 207px;
+  clear: both;
+  padding: 0px 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  float: left;
+}
+.login .form-group label {
+  width: 207px;
+  color: #ffffff;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  float: left;
+}
+.login .form-group input {
+  width: 215px;
+  clear: both;
+  float: left;
+  border: 1px solid;
+  height: 20px;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+.login .form-group button {
+  float: left;
+  width: 220px;
+  height: 25px;
+  border: 1px solid;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  cursor: pointer;
+}
+.login .form-group button:hover {
+  background: #ffffff;
+}
+.login .alert-login {
+  width: 230px;
+  color: #ffffff;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: red;
+  word-break: break-all;
+  padding: 2px 5px;
+  line-height: 12px;
+}
+div#header {
+  float: left;
+  width: 240px;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 2px;
+  overflow: hidden;
+  background: #003554 !important;
+}
+div#header .content-logo {
+  width: 60px;
+  float: left;
+  margin-top: 2px;
+  margin-left: 5px;
+}
+div#header .content-logo img {
+  height: 15px;
+}
+div#header .content-info-user {
+  float: right;
+  text-align: right;
+  width: 160px;
+  margin-top: 3px;
+  margin-right: 5px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+div#header .content-info-user .content-name-user {
+  color: #ffffff;
+  float: right;
+  margin-right: 2px;
+}
+div#header .content-info-user #logout-form {
+  float: right;
+  margin-top: 2px;
+}
+div#header .content-info-user #logout-form input {
+  border: 0;
+  background: transparent;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+div#app {
+  float: left;
+  width: 240px;
+  overflow: hidden;
+  padding-top: 10px;
+  background: #003554;
+}
+div#app .content-modulos-home {
+  float: left;
+  width: 227px;
+}
+div#app .content-modulos-home .content-programa {
+  float: left;
+  margin-bottom: 5px;
+  clear: both;
+  width: 227px;
+}
+div#app .content-modulos-home .content-programa a {
+  color: #ffffff;
+}
+#app_content {
+  padding-top: 5px;
+  width: 240px;
+  height: 186px;
+  overflow: hidden;
+}
+#app_content .content-title-page {
+  float: left;
+  width: 230px;
+}
+#app_content .content-title-page h2 {
+  float: left;
+  font-size: 10px;
+  margin: 0;
+  text-transform: uppercase;
+  padding: 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#form_guardar_mercadoria {
+  padding: 10px;
+  float: left;
+}
+#form_guardar_mercadoria .form-group {
+  7float: left;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#form_guardar_mercadoria .form-group label {
+  width: 207px;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  float: left;
+}
+#form_guardar_mercadoria .form-group input {
+  width: 215px;
+  clear: both;
+  float: left;
+  border: 1px solid;
+  height: 20px;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+
+/*# sourceMappingURL=style_coletor.css.map */

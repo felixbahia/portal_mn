@@ -1,0 +1,39 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class AlterTableProjetoFaccaoTecido extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('lancamento_projeto_faccoes', function ($table) {
+            $table->integer('lancamento_projeto_tecidos_id')->nullable();
+            $table->string('codigo_produto_acabado')->nullable();
+
+            $table->foreign('lancamento_projeto_tecidos_id')
+                ->references('id')
+                ->on('lancamento_projeto_tecidos')
+                ->onDelete('NO ACTION');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('lancamento_projeto_faccoes', function ($table) {
+            $table->dropColumn('lancamento_projeto_produtos_id');
+            $table->dropColumn('codigo_produto_acabado');
+        });
+    }
+}

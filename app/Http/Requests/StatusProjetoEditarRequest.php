@@ -1,0 +1,84 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\ValidationException;
+use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Validation\Rule;
+
+class StatusProjetoEditarRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+            'descricao' => [
+                'required',
+                'max:60', 
+                Rule::unique('status_projeto')->where(function ($query) {
+                    $id = decrypt($this->id);
+                    $query->where('id', '!=', $id)
+                    ->where('descricao', $this->descricao)
+                    ->whereNull('deleted_at');
+                }),
+            ],
+            'posicao' => [
+                'required',
+                'max:2'
+            ],
+            'status' => [
+                'required',
+                'max:60',
+            ],
+            'dias' => [
+                'required',
+                'max:3'
+            ]
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'descricao.required' => __('validation.required', ['attribute' => 'Fase']),
+            'descricao.max' => __('validation.max.string', ['attribute' => 'Fase']),
+            'descricao.unique' =>  __('validation.unique', ['attribute' => 'Fase']),
+            'posicao.required' => __('validation.required', ['attribute' => 'Posição']),
+            'posicao.max' => __('validation.max.string', ['attribute' => 'Posição']),
+            'status.required' => __('validation.required', ['attribute' => 'Status']),
+            'status.max' => __('validation.max.string', ['attribute' => 'Status']),
+            'dias.required' => __('validation.required', ['attribute' => 'Dias']),
+            'dias.max' => __('validation.max.string', ['attribute' => 'Dias']),
+        ];
+    }
+
+    protected function failedValidation(Validator $validator) {
+        $errors = (new ValidationException($validator))->errors();
+        foreach ($errors as $key => $value) {
+            $errors[$key] = implode("<br>", $value);
+        }
+        $error = [
+            'status' => 'error', /// success, error
+            'message' => '', /// mensagem
+            'error' => $errors,
+            'response' => []
+        ];
+        throw new HttpResponseException(response()->json($error, 422));
+    }
+}

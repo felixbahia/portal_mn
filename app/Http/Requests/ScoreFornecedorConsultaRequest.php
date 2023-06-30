@@ -1,0 +1,79 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Carbon\Carbon;
+use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Validation\ValidationException;
+use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Validation\Rule;
+
+class ScoreFornecedorConsultaRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+            'data_inicio' => [
+                'required',
+                'max:20',
+                'date_format:d/m/Y',
+                function($attribute, $value, $fail) {
+                    if(!empty($this->data_inicio) && !empty($this->data_fim)){
+                        $data_inicio = Carbon::createFromFormat('d/m/Y', $this->data_inicio)->setTime(0,0,0);
+                        $data_fim = Carbon::createFromFormat('d/m/Y', $this->data_fim)->setTime(0,0,0);
+                        if($data_fim < $data_inicio){
+                            return $fail(__('validation.before', ['attribute' => 'Data Inicial','date' => 'Data Final']));
+                        }
+                    }
+                }
+            ],
+            'data_fim' => [
+                'required',
+                'max:20',
+                'date_format:d/m/Y',
+            ],
+        ];
+    }
+
+    public function messages(){
+        return [
+            'data_inicio.required' => __('validation.required', ['attribute' => 'Data Inicial']),
+            'data_inicio.max' => __('validation.max', ['attribute' => 'Data Inicial','max' => '20']),
+            'data_inicio.date_format' => __('validation.date_format', ['attribute' => 'Data Inicial','format' => 'dd/mm/aaaa']),
+            'data_fim.required' => __('validation.required', ['attribute' => 'Data Final']),
+            'data_fim.max'  => __('validation.max', ['attribute' => 'Data Final','max' => '20']),
+            'data_fim.date_format'  => __('validation.date_format', ['attribute' => 'Data Final','format' => 'dd/mm/aaaa']),
+        ];
+    }
+
+    protected function failedValidation(Validator $validator) {
+        $errors = (new ValidationException($validator))->errors();
+        foreach ($errors as $key => $value) {
+            $errors[$key] = implode("<br>", $value);
+        }
+        $error = [
+            'status' => 'error',
+            'message' => '',
+            'error' => $errors,
+            'response' => []
+        ];
+        throw new HttpResponseException(response()->json($error, 422));
+    }
+}

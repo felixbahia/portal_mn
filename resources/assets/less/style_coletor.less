@@ -1,0 +1,238 @@
+@font-family: Arial, Helvetica, sans-serif;
+
+@url-assets-img: "/images";
+
+/************************************************************************/
+
+@color-background: #003554;
+
+@color-btn: #ffffff;
+
+/************************************************************************/
+
+.border-radius (@radius: 5px) {
+    border-radius: @radius;
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+}
+.box-shadow (@inset: '', @x: 0, @y: 0, @blur: 1px, @spread: 0, @color: #000) {
+    box-shadow: @arguments;
+    -moz-box-shadow: @arguments;
+    -webkit-box-shadow: @arguments;
+}
+.center_content(){
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.overfow_text(){
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/************************************************************************/
+*{
+    font-family: @font-family;
+}
+html, body{
+    float: left;
+    width: 227px;
+    height: 224px;
+    background: #fff;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+}
+.page-sem-header body{
+    background: @color-background !important;
+}
+:focus {
+    outline: 0;
+    box-shadow: none !important;
+}
+a:hover{
+    text-decoration: none;
+}
+input, textarea{
+    font-family: @font-family;
+}
+b, strong{
+    font-weight: 700;
+}
+div.dataTables_wrapper div.dataTables_processing{
+    display: none !important;
+}
+label{
+    margin-bottom: 0;
+}
+.display_none{
+    display: none;
+}
+.login{
+    float: left;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    .logo-login{
+        width: 227px;
+        text-align: center;
+        padding: 10px 0;
+        img{
+            width: 70px;
+        }
+    }
+    .form-group{
+        width: 207px;
+        clear: both;
+        padding: 0px 10px;
+        margin: 5px 0;
+        box-sizing: border-box;
+        float: left;
+        label {
+            width: 207px;
+            color: @color-btn;
+            font-size: 10px;
+            text-transform: uppercase;
+            font-weight: 700;
+            float: left;
+        }
+        input{
+            width: 215px;
+            clear: both;
+            float: left;
+            border: 1px solid;
+            height: 20px;
+            .border-radius(0);
+        }
+        button{
+            float: left;
+            width: 220px;
+            height: 25px;
+            border: 1px solid;
+            .border-radius(0);
+            cursor: pointer;
+            &:hover{
+                background: @color-btn;
+            }
+        }
+    }
+    .alert-login{
+        width: 230px;
+        color: @color-btn;
+        font-size: 10px;
+        text-transform: uppercase;
+        font-weight: 700;
+        background: red;
+        word-break: break-all;
+        padding: 2px 5px;
+        line-height: 12px;
+    }
+}
+div#header{
+    float: left;
+    width: 240px;
+    border-bottom: 1px solid @color-btn;
+    padding-bottom: 2px;
+    overflow: hidden;
+    background: @color-background !important;
+    .content-logo{
+        width: 60px;
+        float: left;
+        margin-top: 2px;
+        margin-left: 5px;
+        img{
+            height: 15px;
+        }
+    }
+    .content-info-user{
+        float: right;
+        text-align: right;
+        width: 160px;
+        margin-top: 3px;
+        margin-right: 5px;
+        font-size: 10px;
+        text-transform: uppercase;
+        .content-name-user{
+            color: @color-btn;
+            float: right;
+            margin-right: 2px;
+        }
+        #logout-form{
+            float: right;
+            margin-top: 2px;
+            input{
+                border: 0;
+                background: transparent;
+                color: #fff;
+                margin: 0;
+                padding: 0;
+                font-size: 10px;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+div#app{
+    float: left;
+    width: 240px;
+    overflow: hidden;
+    padding-top: 10px;
+    background: @color-background;
+    .content-modulos-home{
+        float: left;
+        width: 227px;
+        .content-programa{
+            float: left;
+            margin-bottom: 5px;
+            clear: both;
+            width: 227px;
+            a{
+                color: @color-btn;
+            }
+        }
+    }
+}
+#app_content{
+    padding-top: 5px;
+    width: 240px;
+    height: 186px;
+    overflow: hidden;
+    .content-title-page {
+        float: left;
+        width: 230px;
+        h2 {
+            float: left;
+            font-size: 10px;
+            margin: 0;
+            text-transform: uppercase;
+            padding: 0 10px;
+            .overfow_text();
+        }
+    }
+}
+#form_guardar_mercadoria{
+    padding: 10px;
+    float: left;
+    .form-group{7
+        float: left;
+        margin: 0 0 10px 0;
+        padding: 0;
+        label {
+            width: 207px;
+            font-size: 10px;
+            text-transform: uppercase;
+            font-weight: 700;
+            float: left;
+        }
+        input{
+            width: 215px;
+            clear: both;
+            float: left;
+            border: 1px solid;
+            height: 20px;
+            .border-radius(0);
+        }
+    }
+}
